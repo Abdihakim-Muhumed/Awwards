@@ -15,3 +15,17 @@ class Projects(models.Model):
 
     def __str__(self):
         return self.username
+
+class Profile(models.Model):
+    bio = models.CharField(max_length=150)
+    profile_photo = CloudinaryField('image')
+    contact = models.CharField(max_length=30)
+    def save_profile(self):
+         self.save()
+
+    def delete_profile(self):
+        self.delete()
+
+    def __str__(self):
+        return self.username
+
