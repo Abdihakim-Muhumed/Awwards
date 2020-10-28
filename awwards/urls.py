@@ -19,7 +19,7 @@ from django.conf.urls import include, url
 from django.contrib.auth import views
 urlpatterns = [
     path('admin/', admin.site.urls),
-    url('',include('Awwardstars.urls')),
+    url('accounts/profile/',include('Awwardstars.urls')),
     url(r'^accounts/', include('django_registration.backends.one_step.urls')),
     url(r'^accounts/', include('django.contrib.auth.urls')),
     url(r'logout/',views.logout_then_login,name='logout'),
