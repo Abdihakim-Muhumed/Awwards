@@ -7,10 +7,10 @@ class Projects(models.Model):
     description = models.CharField(max_length=150)
     link = models.CharField(max_length=100)
 
-    def save_profile(self):
+    def save_projects(self):
          self.save()
 
-    def delete_profile(self):
+    def delete_projects(self):
         self.delete()
 
     def __str__(self):
