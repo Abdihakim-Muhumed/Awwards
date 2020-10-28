@@ -40,14 +40,14 @@
         {% endfor%}
         <div class="text-center">
             <h4>Post a project:</h4>
-            <a href=""><i class="fas fa-plus-circle text-center" style="font-size: 150px;"></i></a>
+            <a href="{%url 'new-project'%}"><i class="fas fa-plus-circle text-center" style="font-size: 150px;"></i></a>
         </div>
         
     </div>
     {% else%}
     <div class="text-center">
         <h4 class="text-center">You have not posted any project yet</h4>
-        <a href="#"><i class="fas fa-plus-circle text-center" style="font-size: 150px;"></i></a>
+        <a href="{%url 'new-project'%}"><i class="fas fa-plus-circle text-center" style="font-size: 150px;"></i></a>
     </div>
     
     {% endif%}
