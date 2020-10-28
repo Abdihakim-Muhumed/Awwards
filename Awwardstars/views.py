@@ -2,7 +2,7 @@ from django.shortcuts import render,redirect
 from django.contrib.auth.decorators import login_required
 from .models import Projects,Profile
 from django.contrib.auth.models import User
-from .forms import EditProfileForm
+from .forms import EditProfileForm,NewProjectForm
 # Create your views here.
 def index(request):
     return render(request,'index.html')
@@ -32,3 +32,18 @@ def edit_profile(request):
     else:
         form = EditProfileForm()
     return render(request, 'edit_profile.html', {"form": form})
+
+@login_required(login_url='/accounts/login/')
+def new_project(request):
+    current_user = request.user
+    if request.method == 'POST':
+        form = NewProjectForm(request.POST, request.FILES)
+        if form.is_valid():
+            project = form.save(commit=False)
+            project.user = current_user
+            project.save()
+        return redirect('profile')
+
+    else:
+        form = NewProjectForm()
+    return render(request, 'new_project.html', {"form": form})

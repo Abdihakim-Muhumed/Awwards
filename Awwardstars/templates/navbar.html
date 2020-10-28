@@ -13,7 +13,7 @@
     </div>
     
     <!-- Adding a search form  -->
-    <div class="col-sm-6 col-md-6 ">
+    <div class="col-sm-7 col-xs-7 col-lg-7 col-md-7 ">
         <form class="navbar-form" role="search" action="#">
           <div class="input-group">
             <input type="text" class="form-control" placeholder="Search a project" name="projectsearch">
@@ -28,17 +28,17 @@
     <button class="navbar-toggler navbar-right" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse navbar-right col-md-4 col-sm-4" id="navbarNavDropdown" style="float: right;">
+    <div class="collapse navbar-collapse navbar-right col-md-4 col-sm-4 col-xs-4 col-lg-4" id="navbarNavDropdown" style="float: right;">
         <ul class="nav navbar-nav ml-auto mr-3 ">
             {% if user.is_authenticated%}
             <li class="nav-item">
                 <a class="nav-link" href="{%url 'index'%}">Home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="">Profile</a>
+                <a class="nav-link" href="{%url 'profile'%}">Profile</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="">Submit</a>
+                <a class="nav-link" href="">Post</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="{%url 'logout'%}">Logout</a>

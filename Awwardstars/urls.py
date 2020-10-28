@@ -5,4 +5,5 @@ urlpatterns = [
     path('',views.index, name='index'),
     path('edit/',views.edit_profile,name='edit-profile'),
     path('my_profile/',views.profile,name='profile'),
+    path('new/project/',views.new_project,name='new-project'),
 ]
