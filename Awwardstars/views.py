@@ -7,6 +7,11 @@ from .forms import EditProfileForm,NewProjectForm
 def index(request):
     projects = Projects.objects.all()
     return render(request,'index.html',{"projects":projects})
+
+@login_required(login_url='/accounts/login/')
+def view_project(request,project_id):
+    project = Projects.objects.filter(id=project_id).first()
+    return render(request,'project.html',{"project":project})
 @login_required(login_url='/accounts/login/')
 def profile(request):
     current_user = request.user
