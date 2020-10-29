@@ -5,7 +5,8 @@ from django.contrib.auth.models import User
 from .forms import EditProfileForm,NewProjectForm
 # Create your views here.
 def index(request):
-    return render(request,'index.html')
+    projects = Projects.objects.all()
+    return render(request,'index.html',{"projects":projects})
 @login_required(login_url='/accounts/login/')
 def profile(request):
     current_user = request.user
@@ -46,4 +47,5 @@ def new_project(request):
 
     else:
         form = NewProjectForm()
-    return render(request, 'new_project.html', {"form": form})
+        title = 'Post Project'
+    return render(request, 'new_project.html', {"form": form,"title":title})

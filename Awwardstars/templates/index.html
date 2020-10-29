@@ -1,4 +1,26 @@
 {%extends 'base.html'%}
 {%block content%}
-<h1 class="text-center">Welcome to Awwards!</h1>
+<h1 class="text-center"></h1>
+<div class="container">
+    {% for project in projects%}
+    <div class="row">
+        <div class="col-md-1 col-sm-1 col-lg-1 col-xs-1"></div>
+        <div class="">
+            <div class="card col-md-10 col-sm-11 col-lg-10 col-xs-11 m-2 p-2 shadow-sm">
+                <img src="{{project.landing_page.url}}" class="card-img-top" alt="{{project.title}}" height='350' width='100%' data-toggle="modal" data-target="#{{image.image}}">
+        
+                <div class="card-body">
+                    <h5 class="card-text float-left">{{project.title}}</h5>
+                     <a class="text-secondary float-right" href="">
+                    <button class="btn btn-success">View Project</button>
+                    </a> 
+                    
+                </div>
+                <p class="text-secondary ml-3" ></p>
+    
+            </div>
+        </div>
+    </div>
+    {%endfor%}
+</div>
 {%endblock content%}
