@@ -8,6 +8,10 @@ class Projects(models.Model):
     description = models.CharField(max_length=150)
     link = models.CharField(max_length=100)
     user = models.ForeignKey(User,on_delete=models.CASCADE,default=1)
+    total_score = models.IntegerField(default=0)
+    average = models.IntegerField(default = 0)
+    reviews =models.IntegerField(default=0)
+    
     def save_projects(self):
          self.save()
 
@@ -15,7 +19,7 @@ class Projects(models.Model):
         self.delete()
 
     def __str__(self):
-        return self.username
+        return self.title
 
 class Profile(models.Model):
     bio = models.CharField(max_length=150)
@@ -29,5 +33,5 @@ class Profile(models.Model):
         self.delete()
 
     def __str__(self):
-        return self.username
+        return self.bio
 
