@@ -6,9 +6,6 @@
     .checked{
         color: orange;
     }
-    ul li{
-        display: inline-block;
-    }
 </style>
 <h1 class="text-center"></h1>
 <div class="container">
@@ -39,6 +36,7 @@
             </div>
 
             <form action="{%url 'rate-project' project.id%}" class="card-body" method="POST">
+                <label for=""> Rate in order of design, usability and content</label>
                 {% csrf_token%}
                 {%bootstrap_form form layout='inline'%}
                 <input class="btn btn-default btn-block btn-primary" type="submit" value="Submit Raview">

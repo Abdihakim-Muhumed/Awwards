@@ -1,8 +1,7 @@
 {%extends 'base.html'%}
 {%block content%}
-<h1 class="text-center">Search results for</h1>
 <div class="container">
-    {% if articles%}
+    {% if projects%}
       <h2>Found {{ projects|length }} of searched term {{message}}</h2>
     {% else %}
       <h2> Found 0 projects for the search term {{message}}</h2>

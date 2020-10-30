@@ -1,5 +1,10 @@
 {%extends 'base.html'%}
 {%block content%}
+<style>
+    .checked{
+        color: orange;
+    }
+</style>
 <h1 class="text-center"></h1>
 <div class="container">
     {% for project in projects%}
@@ -10,7 +15,14 @@
                 <img src="{{project.landing_page.url}}" class="card-img-top" alt="{{project.title}}" height='350' width='100%' >
         
                 <div class="card-body">
-                    <h5 class="card-text float-left">{{project.title}}</h5>
+                    <h5 class="card-text float-left">{{project.title}} 
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star"></span>
+                        <p>{{project.average}} average based on {{project.reviews}} reviews.</p>
+                    </h5>
                     <a class="text-secondary float-right" href="{%url 'view-project' project.id %}">
                         <button class="btn btn-success">Review Project</button>
                     </a>                   
