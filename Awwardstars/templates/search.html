@@ -1,0 +1,33 @@
+{%extends 'base.html'%}
+{%block content%}
+<h1 class="text-center">Search results for</h1>
+<div class="container">
+    {% if articles%}
+      <h2>Found {{ projects|length }} of searched term {{message}}</h2>
+    {% else %}
+      <h2> Found 0 projects for the search term {{message}}</h2>
+    {% endif %}
+    {%if projects%}
+    {% for project in projects%}
+    <div class="row">
+        <div class="col-md-1 col-sm-1 col-lg-1 col-xs-1"></div>
+        <div class="">
+            <div class="card col-md-10 col-sm-11 col-lg-10 col-xs-11 m-2 p-2 shadow-sm">
+                <img src="{{project.landing_page.url}}" class="card-img-top" alt="{{project.title}}" height='350' width='100%' >
+        
+                <div class="card-body">
+                    <h5 class="card-text float-left">{{project.title}}</h5>
+                    <a class="text-secondary float-right" href="{%url 'view-project' project.id %}">
+                        <button class="btn btn-success">Review Project</button>
+                    </a>                   
+                </div>
+                <p class="text-secondary ml-3" ></p>
+    
+            </div>
+        </div>
+    </div>
+    {%endfor%}
+    {%endif%}
+</div>
+{%endblock content%}
+
