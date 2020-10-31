@@ -3,7 +3,7 @@
 #  Author: Abdihakim Muhumed.
 This is a web application will allow a user to post a project he or she has created and get it reviewed by his or her peers.
 # Setup Instructions:
-Click this link to access the application : 
+Click this link to access the application : https://awwardstars.herokuapp.com/
 # Technologies
  1.Python(django)
  2.HTML
