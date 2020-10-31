@@ -8,7 +8,7 @@ class EditProfileForm(forms.ModelForm):
 class NewProjectForm(forms.ModelForm):
     class Meta:
         model = Projects
-        exclude = ['user']
+        exclude = ['user','total_score','average','reviews']
 DESIGN_RATES=[
     (1,'1'),(2,'2'),(3,'3'),(4,'4'),(5,'5'),(6,'6'),(7,'7'),(8,'8'),(9,'9'),(10,'10')
 ]
